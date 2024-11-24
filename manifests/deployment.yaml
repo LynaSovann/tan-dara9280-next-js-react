@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tan-dara9280-next-js-react-deployment
+  labels:
+    app: tan-dara9280-next-js-react
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tan-dara9280-next-js-react
+  template:
+    metadata:
+      labels:
+        app: tan-dara9280-next-js-react
+    spec:
+      containers:
+        - name: tan-dara9280-next-js-react-container
+          image: pipejet/tan-dara9280-next-js-react:0
+          ports:
+            - containerPort: 3000
